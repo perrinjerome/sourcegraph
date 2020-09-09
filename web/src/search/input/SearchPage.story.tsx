@@ -1,6 +1,7 @@
 import React from 'react'
 import { createMemoryHistory } from 'history'
 import { NOOP_TELEMETRY_SERVICE } from '../../../../shared/src/telemetry/telemetryService'
+import { of } from 'rxjs'
 import { SearchPage, SearchPageProps } from './SearchPage'
 import { SearchPatternType } from '../../graphql-operations'
 import { Services } from '../../../../shared/src/api/client/services'
@@ -45,6 +46,7 @@ const defaultProps = (props: ThemeProps): SearchPageProps => ({
     showEnterpriseHomePanels: false,
     showOnboardingTour: false,
     isLightTheme: props.isLightTheme,
+    fetchRecentSearches: () => of({ nodes: [], totalCount: 0, pageInfo: { hasNextPage: false, endCursor: null } }),
 })
 
 const { add } = storiesOf('web/search/input/SearchPage', module).addParameters({

@@ -167,7 +167,7 @@ export interface OnboardingTourProps {
 
 export interface EnterpriseHomePanelsProps {
     showEnterpriseHomePanels: boolean
-    fetchRecentSearches: (userId: string, first: number) => Observable<EventLogResult>
+    fetchRecentSearches: (userId: string, first: number) => Observable<EventLogResult | null>
 }
 
 /**

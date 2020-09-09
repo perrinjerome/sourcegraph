@@ -10,7 +10,7 @@ import { PatternTypeProps } from '..'
 
 interface Props extends Pick<PatternTypeProps, 'patternType'> {
     authenticatedUser: AuthenticatedUser | null
-    fetchRecentSearches: (userId: string, first: number) => Observable<EventLogResult>
+    fetchRecentSearches: (userId: string, first: number) => Observable<EventLogResult | null>
 }
 
 export const EnterpriseHomePanels: React.FunctionComponent<Props> = (props: Props) => (
